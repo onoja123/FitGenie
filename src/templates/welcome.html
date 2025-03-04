@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("");
+
+      * {
+        margin: 0;
+        border: 0;
+      }
+
+      body {
+        font-family: sans-serif;
+        background-color: #FFF;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+        margin-top: 48px;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+        height: 100vh;
+        width: 80vw;
+        display: grid;
+        gap: 40px;
+      }
+      #logo{
+        display: flex;
+        justify-content: center;
+        gap: 7px;
+      }
+      #list{
+        display: inline-block;
+      }
+      #banner{
+        border-radius: 12px;
+        height: 170px;
+        width: 100%;
+        object-fit: fill;
+      }
+      #main{
+        display: grid;
+        gap: 40px;
+        font-size: 14px;
+        font-weight: 400;
+      }
+      #section{
+        display: grid;
+        gap: 20px;
+      }
+      #btn{
+        padding-top:16px;
+        padding-bottom:16px;
+        padding-left: 48px;
+        padding-right: 48px;
+        margin-right: auto;
+        margin-left: auto;
+        border-radius: 24px;
+        background-color: #ED6810;
+        color: #FFF;
+        font-size: 16px;
+      }
+      #first{
+        font-size: 20px;
+        font-weight: 600;
+        color: #0D0D0D;
+      }
+      #team{
+        font-size: 16px;
+      }
+      #list{
+        display: inline;
+        justify-content: center;
+        font-size: 10px;
+        color: #666;
+      }
+      li{
+        display: inline-block;
+        list-style: circle;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      #listdiv{
+        display: grid;
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 402px;
+        font-size: 10px;
+        font-weight: 400;
+        color: #0F0F0F;
+      }
+      #allright{
+        margin-right: auto;
+        margin-left: auto;
+      }
+      footer{
+        display: grid;
+        gap: 32px;
+      }
+    </style>
+    </head>
+    <body>
+        <header>
+            <div id="logo">
+                <div>
+                    <img
+                        src="image/icon.svg"
+                        alt="icon"
+                        height="34px"
+                        width="27px"
+                    >
+                </div>
+                <div>
+                    <img
+                        src="image/type.svg"
+                        alt="icon"
+                        height="34px"
+                        width="183px"
+                    >
+                </div>
+            </div>  
+        </header>
+        <div>
+            <img id="banner"
+            src="image/Frame.png"
+            alt="frame"
+            >
+        </div>
+
+        <div id="main">
+            <div id="section">
+                <h1 id="first">Hi {{fullname}},</h1>           
+                <p>
+                    Welcome </br>
+
+                    To get started, we recommend taking a few moments to explore our platform and familiarize yourself with our features.  
+                </p>
+            </div>
+            <p>
+              Here is your One Time Password {{otp}}.</br> 
+              Please enter this code to verify your email address for
+          </p>
+            <p>
+                We are committed to providing our users with the best possible experience on our platform. Our customer support team is available to assist you with any issues that you may encounter, and we encourage you to reach out to us if you need assistance.</br></br>
+
+                Thank you for choosing . 
+                </br></br>
+                <span id="team">
+                    Thank You</br>
+                    Team 
+                </span>
+            </p>
+        </div>
+        <footer>
+            <div id="listdiv">
+                <div>
+                  <ul id="social">
+                    <li>
+                      <a href="#" target="_blank">
+                        <img src="image/linkedin-1.png" alt="linkedin" height="18" width="18" style="filter: invert(48%) sepia(95%) saturate(2422%) hue-rotate(355deg) brightness(96%) contrast(94%);">                            
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" target="_blank">
+                        <img src="image/instagram.svg" alt="instagram"  height="18" width="18"  style="filter: invert(48%) sepia(95%) saturate(2422%) hue-rotate(355deg) brightness(96%) contrast(94%);">                           
+                     </a>
+                    </li>
+                    <li>
+                      <a href="#" target="_blank">
+                          <img src="image/twitter.svg" alt="twitter" height="18" width="18"  style="filter: invert(48%) sepia(95%) saturate(2422%) hue-rotate(355deg) brightness(96%) contrast(94%);">
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" target="_blank">
+                          <img src="image/facebooklogo.png" alt="facebook"  height="18" width="18" style="filter: invert(48%) sepia(95%) saturate(2422%) hue-rotate(355deg) brightness(96%) contrast(94%);">
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <p id="allright">© 2024. All right reserved</p>
+            </div>
+            <div id="listdiv">
+                <p>
+                </p>
+                <ul id="list">
+                    <li>Privacy policy</li>
+                    <li>Terms of service</li>
+                    <li>Help center</li>
+                    <li>Unsubscribe</li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html>
