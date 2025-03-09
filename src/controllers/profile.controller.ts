@@ -23,9 +23,9 @@ export const getProfile = catchAsync(async(req: Request, res: Response, next: Ne
           return next(new AppError("No profile found", ResponseHelper.RESOURCE_NOT_FOUND))
       }
 
-      ResponseHelper.sendSuccessResponse(res, { 
+      ResponseHelper.sendSuccessResponse(res, {
           statusCode: ResponseHelper.OK,
-          data: profile ,  
+          data: profile ,
       });
 
   } catch (error) {
@@ -50,13 +50,13 @@ export const setProfile = catchAsync(async (req: Request, res: Response, next: N
     // if (validationResult.error) {
     //     return next(new AppError(validationResult.error.message, ResponseHelper.BAD_REQUEST));
     // }
-  
+
     const profile = await ProfileService.setProfile(req.user?.id, req.body)
 
     if(!profile){
       return next(new AppError("User not found", ResponseHelper.RESOURCE_NOT_FOUND))
     }
-  
+
     // send success response
     ResponseHelper.sendSuccessResponse(res, {
         message: 'Profile set successfully',
@@ -87,13 +87,13 @@ export const updateProfile = catchAsync(async (req: Request, res: Response, next
     if (validationResult.error) {
         return next(new AppError(validationResult.error.message, ResponseHelper.BAD_REQUEST));
     }
-  
+
     const profile = await ProfileService.updateUserProfile(req.user?.id, req.body)
 
     if(!profile){
       return next(new AppError("User not found", ResponseHelper.RESOURCE_NOT_FOUND))
     }
-  
+
     // send success response
     ResponseHelper.sendSuccessResponse(res, {
         message: 'Updated profile successfully',
@@ -152,6 +152,31 @@ export const uploadImage = async (req: Request, res: Response, next: NextFunctio
   }
 };
 
+
+/**
+ * @author
+ * @description Trigger the AI to generate a personalized fitness and nutrition plan based on input parameters like goals, preferences, and activity levels.
+ * @route `/api/v1/profile/generate-plan`
+ * @access PRIVATE
+ * @type POST
+ */
+
+/**
+ * @author
+ * @description Get feedback on the current fitness/nutrition plans based on user performance and progress.
+ * @route `/api/v1/profile/feedback`
+ * @access PRIVATE
+ * @type GET
+ */
+
+/**
+ * @author
+ * @description Sync data with other services (e.g., wearables or external APIs like Google Fit).
+ * @route `/api/v1/profile/sync`
+ * @access PRIVATE
+ * @type POST
+ */
+
 /**
  * @author
  * @description Delete member
@@ -163,7 +188,7 @@ export const deleteMember = catchAsync(async (req: Request, res: Response, next:
   try {
 
     const profile = await ProfileService.deleteMember(req.user?.id)
- 
+
     if(!profile){
       return next(new AppError("User not found", ResponseHelper.RESOURCE_NOT_FOUND))
     }
@@ -171,7 +196,7 @@ export const deleteMember = catchAsync(async (req: Request, res: Response, next:
     // send response
      ResponseHelper.sendResponse(res, {
       message: "Profile deleted successfully",
-      statusCode: ResponseHelper.OK 
+      statusCode: ResponseHelper.OK
       });
 
   } catch (error) {
